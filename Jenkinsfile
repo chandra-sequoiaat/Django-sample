@@ -7,11 +7,13 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        
+        stages {  
+            stage('Checkout') {  
             steps {
-                checkout scm
-            }
-        }
+                git credentialsId: 'd267db4f-6d39-4d66-82de-6a584dcb3674', url: 'https://github.com/chandramohanpacha/hrm.git', branch: 'master'
+            }  
+        }  
 
         stage('Build Docker Image') {
             steps {

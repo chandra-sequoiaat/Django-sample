@@ -11,7 +11,7 @@ pipeline {
         stages {  
             stage('Checkout') {  
             steps {
-                git credentialsId: 'd267db4f-6d39-4d66-82de-6a584dcb3674', url: 'https://github.com/chandramohanpacha/hrm.git', branch: 'master'
+                git credentialsId: '4c728570-2f61-4eea-916a-a3f27819bcdf', url: 'https://github.com/chandra-sequoiaat/Django-sample.git', branch: 'master'
             }  
         }  
 

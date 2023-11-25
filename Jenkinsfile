@@ -8,13 +8,11 @@ pipeline {
 
     stages {
         
-        stages {  
-            stage('Checkout') {  
+        stage('Checkout') {  
             steps {
                 git credentialsId: '4c728570-2f61-4eea-916a-a3f27819bcdf', url: 'https://github.com/chandra-sequoiaat/Django-sample.git', branch: 'master'
             }  
-        }  
-
+        }
         stage('Build Docker Image') {
             steps {
                 script {

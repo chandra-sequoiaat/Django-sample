@@ -9,7 +9,8 @@ COPY requirements.txt .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Copy the application files into the container
+COPY . /django_project
 
 # Run the Django development server in the background
 #CMD start python manage.py runserver 0.0.0.0:8000

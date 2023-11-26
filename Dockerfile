@@ -13,5 +13,6 @@ COPY . .
 
 # Run the Django development server in the background
 #CMD start python manage.py runserver 0.0.0.0:8000
-#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "http://localhost:8000/"]
+#CMD ["gunicorn", "--bind", "0.0.0.0:8000", "http://localhost:8000/"]
+#CMD start python manage.py runserver 0.0.0.0:8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

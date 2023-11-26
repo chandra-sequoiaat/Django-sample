@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django_project
+  spec:
+    replicas: 3  # Adjust the number of replicas as needed
+    template:
+      metadata:
+        labels:
+          app: django_project
+      spec:
+        containers:
+        - name: django_project
+          image: django_project:latest
+          ports:
+          - containerPort: 8000  # Adjust the port as per your Django app
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: django_project-service
+spec:
+  selector:
+    app: django_project
+  ports:
+    - protocol: TCP
+      port: 80  # Service port
+      targetPort: 8000  # Container port
+  type: LoadBalancer
